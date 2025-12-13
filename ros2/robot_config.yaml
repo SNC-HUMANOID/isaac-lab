@@ -1,0 +1,185 @@
+# Robot Configuration for Humanoid Policy Deployment
+
+# Robot Hardware
+robot:
+  name: "Humanoid_10102025"
+  num_joints: 21
+  
+  # Joint names in the order expected by the policy
+  # IMPORTANT: This order must match the training environment!
+  joint_names:
+    - left_hip_pitch_joint
+    - right_hip_pitch_joint
+    - left_hip_roll_joint
+    - right_hip_roll_joint
+    - left_hip_yaw_joint
+    - right_hip_yaw_joint
+    - left_knee_joint
+    - right_knee_joint
+    - left_ankle_pitch_joint
+    - right_ankle_pitch_joint
+    - left_ankle_roll_joint
+    - right_ankle_roll_joint
+    - waist_joint
+    - left_shoulder_pitch_joint
+    - right_shoulder_pitch_joint
+    - left_shoulder_roll_joint
+    - right_shoulder_roll_joint
+    - left_shoulder_yaw_joint
+    - right_shoulder_yaw_joint
+    - left_elbow_joint
+    - right_elbow_joint
+  
+  # Default joint positions (standing pose) in radians
+  # These should match the default_joint_pos used during training
+  default_positions:
+    - 0.0  # left_hip_pitch
+    - 0.0  # right_hip_pitch
+    - 0.0  # left_hip_roll
+    - 0.0  # right_hip_roll
+    - 0.0  # left_hip_yaw
+    - 0.0  # right_hip_yaw
+    - 0.0  # left_knee
+    - 0.0  # right_knee
+    - 0.0  # left_ankle_pitch
+    - 0.0  # right_ankle_pitch
+    - 0.0  # left_ankle_roll
+    - 0.0  # right_ankle_roll
+    - 0.0  # waist
+    - 0.0  # left_shoulder_pitch
+    - 0.0  # right_shoulder_pitch
+    - 0.0  # left_shoulder_roll
+    - 0.0  # right_shoulder_roll
+    - 0.0  # left_shoulder_yaw
+    - 0.0  # right_shoulder_yaw
+    - 0.0  # left_elbow
+    - 0.0  # right_elbow
+  
+  # Joint limits [lower, upper] in radians
+  joint_limits:
+    left_hip_pitch: [-1.57, 1.57]
+    right_hip_pitch: [-1.57, 1.57]
+    left_hip_roll: [-0.5, 0.5]
+    right_hip_roll: [-0.5, 0.5]
+    left_hip_yaw: [-0.5, 0.5]
+    right_hip_yaw: [-0.5, 0.5]
+    left_knee: [-2.0, 0.1]
+    right_knee: [-2.0, 0.1]
+    left_ankle_pitch: [-0.5, 0.5]
+    right_ankle_pitch: [-0.5, 0.5]
+    left_ankle_roll: [-0.3, 0.3]
+    right_ankle_roll: [-0.3, 0.3]
+    waist: [-0.5, 0.5]
+    left_shoulder_pitch: [-1.57, 1.57]
+    right_shoulder_pitch: [-1.57, 1.57]
+    left_shoulder_roll: [-0.5, 0.5]
+    right_shoulder_roll: [-0.5, 0.5]
+    left_shoulder_yaw: [-0.5, 0.5]
+    right_shoulder_yaw: [-0.5, 0.5]
+    left_elbow: [-1.57, 0.0]
+    right_elbow: [-1.57, 0.0]
+
+# Control Configuration
+control:
+  # Control loop frequency (Hz)
+  # Should match or be higher than training control rate
+  rate: 200.0
+  
+  # Action scaling factor
+  # Training typically uses 0.25, but you may need to reduce for real robot
+  action_scale: 0.25
+  
+  # Maximum joint velocity (rad/s)
+  max_joint_velocity: 10.0
+  
+  # Action filtering
+  use_action_filter: true
+  action_filter_window: 3  # Moving average window size
+  
+  # Safety limits
+  enable_safety: true
+  safety_timeout: 0.5  # Stop if no sensor data for this duration (seconds)
+
+# Observation Configuration
+observation:
+  # Total observation size (must match training)
+  size: 51
+  
+  # Observation components (in order)
+  components:
+    - name: "joint_positions"
+      size: 21
+      normalize: true  # Relative to default positions
+    - name: "joint_velocities"
+      size: 21
+      normalize: false
+    - name: "base_angular_velocity"
+      size: 3
+      normalize: false
+    - name: "projected_gravity"
+      size: 3
+      normalize: true  # Unit vector
+    - name: "commands"
+      size: 3
+      normalize: false
+
+# ROS 2 Topics
+ros2:
+  # Input topics
+  joint_state_topic: "/joint_states"
+  imu_topic: "/imu/data"
+  cmd_vel_topic: "/cmd_vel"
+  
+  # Output topics
+  joint_command_topic: "/joint_position_command"
+  
+  # QoS settings
+  qos:
+    reliability: "best_effort"  # or "reliable"
+    history: "keep_last"
+    depth: 1
+
+# Policy Configuration
+policy:
+  # Path to TorchScript policy file
+  path: "ros2/humanoid_policy.pt"
+  
+  # Device (cpu or cuda)
+  device: "cpu"
+  
+  # Observation normalization
+  # These are typically saved in the checkpoint
+  use_normalization: true
+
+# Command Limits
+commands:
+  # Linear velocity limits (m/s)
+  max_linear_x: 1.0
+  max_linear_y: 0.5
+  
+  # Angular velocity limit (rad/s)
+  max_angular_z: 1.0
+  
+  # Command filtering
+  use_command_filter: true
+  command_filter_alpha: 0.9  # Exponential smoothing factor
+
+# Logging and Debugging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARN, ERROR
+  log_frequency: 10  # Log every N control loops
+  
+  # Topics to monitor
+  monitor_topics:
+    - "/joint_states"
+    - "/imu/data"
+    - "/joint_position_command"
+
+# Emergency Stop
+emergency_stop:
+  # Trigger conditions
+  max_base_angular_velocity: 5.0  # rad/s
+  max_joint_velocity: 15.0  # rad/s
+  
+  # Action on trigger
+  stop_action: "hold_position"  # or "return_to_default"
