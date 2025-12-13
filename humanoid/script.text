@@ -1,0 +1,9 @@
+ros2 launch humanoid_display.launch.py
+
+
+./isaaclab.sh -p scripts/reinforcement_learning/rsl_rl/train.py 
+--task Isaac-Velocity-Flat-Humanoid-10102025-v0 
+--num_envs 4096 
+--max_iterations 25000 
+--resume
+

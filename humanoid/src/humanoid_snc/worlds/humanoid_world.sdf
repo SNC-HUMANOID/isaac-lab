@@ -1,0 +1,14 @@
+<world version='1.6'>
+  <include>
+    <uri>model://ground_plane</uri>
+  </include>
+  <include>
+    <uri>model://sun</uri>
+  </include>
+  <model name='humanoid_robot'>
+    <pose>0 0 0 0 0 0</pose>
+    <include>
+      <uri>model://humanoid_10102025</uri>
+    </include>
+  </model>
+</world>
