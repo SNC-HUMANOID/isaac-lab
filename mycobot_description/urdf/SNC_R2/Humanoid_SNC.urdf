@@ -1,0 +1,1265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Humanoid_SNC">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00294140229836861 -2.34688882640845E-05 -0.172506055770914"
+        rpy="0 0 0" />
+      <mass
+        value="10.0089737050051" />
+      <inertia
+        ixx="0.0919109363164272"
+        ixy="-4.69401177199925E-05"
+        ixz="-1.25148569951136E-06"
+        iyy="0.0547245742815206"
+        iyz="2.33729536792665E-06"
+        izz="0.0596707134939157" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_shoulder_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.00395836057089548 0.0438151993942214 2.84494650060196E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.382345411298931" />
+      <inertia
+        ixx="0.000435053645591751"
+        ixy="3.01479757920243E-05"
+        ixz="7.54587408882589E-19"
+        iyy="0.000468439764548721"
+        iyz="-8.18207362936113E-19"
+        izz="0.000640484705989406" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/left_shoulder_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/left_shoulder_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_shoulder_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.1105 -0.049"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_shoulder_pitch_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.571"
+      upper="3.142"
+      effort="27"
+      velocity="2.618" />
+  </joint>
+  <link
+    name="left_shoulder_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.002624755838986 -8.32667268468867E-17 -0.0516557267438284"
+        rpy="0 0 0" />
+      <mass
+        value="0.283396022327848" />
+      <inertia
+        ixx="0.000330711018125575"
+        ixy="-1.24841021018946E-19"
+        ixz="3.31259917142625E-05"
+        iyy="0.000626287240429608"
+        iyz="3.81740953320804E-20"
+        izz="0.000405495866168468" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/left_shoulder_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/left_shoulder_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_shoulder_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0.000752223398315589 0.0574999999999993 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_shoulder_pitch_link" />
+    <child
+      link="left_shoulder_roll_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-3.142"
+      upper="0.035"
+      effort="27"
+      velocity="2.618" />
+  </joint>
+  <link
+    name="left_shoulder_yaw_link">
+    <inertial>
+      <origin
+        xyz="1.52113564799716E-16 0.0027087001147626 -0.0754833929762556"
+        rpy="0 0 0" />
+      <mass
+        value="0.369506345427206" />
+      <inertia
+        ixx="0.00104751334717701"
+        ixy="-9.15378627975574E-20"
+        ixz="1.49956850200744E-19"
+        iyy="0.000763070627429082"
+        iyz="-6.19304465858317E-05"
+        izz="0.000427421844499961" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/left_shoulder_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/left_shoulder_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_shoulder_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0824999999999992"
+      rpy="0 0 0" />
+    <parent
+      link="left_shoulder_roll_link" />
+    <child
+      link="left_shoulder_yaw_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0.785"
+      upper="-0.785"
+      effort="12"
+      velocity="1.047" />
+  </joint>
+  <link
+    name="left_elbow_link">
+    <inertial>
+      <origin
+        xyz="5.91323864873594E-16 -0.00278748057987085 -0.0700994253109212"
+        rpy="0 0 0" />
+      <mass
+        value="0.311962041950162" />
+      <inertia
+        ixx="0.000898183143871852"
+        ixy="1.15942139402469E-18"
+        ixz="5.8578706218849E-21"
+        iyy="0.000557280897208149"
+        iyz="5.17474994784489E-05"
+        izz="0.000451753626639805" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/left_elbow_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/left_elbow_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_elbow_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.00153790317331412 -0.1223"
+      rpy="0 0 0" />
+    <parent
+      link="left_shoulder_yaw_link" />
+    <child
+      link="left_elbow_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="2.094"
+      effort="12"
+      velocity="1.047" />
+  </joint>
+  <link
+    name="right_shoulder_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.00395836057089539 -0.043815199394222 -6.24500451351651E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.382345411298931" />
+      <inertia
+        ixx="0.000435053645591752"
+        ixy="-3.01479757920244E-05"
+        ixz="-9.19375433251506E-19"
+        iyy="0.000468439764548721"
+        iyz="-4.97663681180295E-19"
+        izz="0.000640484705989406" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/right_shoulder_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/right_shoulder_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.1105 -0.049"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_shoulder_pitch_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.142"
+      upper="1.571"
+      effort="27"
+      velocity="2.618" />
+  </joint>
+  <link
+    name="right_shoulder_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.00262475583898791 3.05311331771918E-16 -0.0516557267438309"
+        rpy="0 0 0" />
+      <mass
+        value="0.283396022327849" />
+      <inertia
+        ixx="0.000330711018125575"
+        ixy="-1.25883632404448E-19"
+        ixz="3.31259917142625E-05"
+        iyy="0.000626287240429608"
+        iyz="3.80160913253382E-20"
+        izz="0.000405495866168468" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/right_shoulder_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/right_shoulder_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0.000752223398315892 -0.0574999999999999 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_shoulder_pitch_link" />
+    <child
+      link="right_shoulder_roll_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-0.035"
+      upper="3.142"
+      effort="27"
+      velocity="2.618" />
+  </joint>
+  <link
+    name="right_shoulder_yaw_link">
+    <inertial>
+      <origin
+        xyz="-7.76614016151367E-16 -0.00270870011476218 -0.0754833929762661"
+        rpy="0 0 0" />
+      <mass
+        value="0.369506345427206" />
+      <inertia
+        ixx="0.00104751334717701"
+        ixy="-5.96242042951214E-20"
+        ixz="4.64128370076909E-20"
+        iyy="0.000763070627429082"
+        iyz="6.19304465858315E-05"
+        izz="0.000427421844499961" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/right_shoulder_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/right_shoulder_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0825"
+      rpy="0 0 0" />
+    <parent
+      link="right_shoulder_roll_link" />
+    <child
+      link="right_shoulder_yaw_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0.785"
+      upper="-0.785"
+      effort="12"
+      velocity="1.047" />
+  </joint>
+  <link
+    name="right_elbow_link">
+    <inertial>
+      <origin
+        xyz="-1.07975694357831E-15 0.00278748057987377 -0.070099425310928"
+        rpy="0 0 0" />
+      <mass
+        value="0.311962041950162" />
+      <inertia
+        ixx="0.000898183143871851"
+        ixy="8.76152648174008E-20"
+        ixz="7.84572448981295E-19"
+        iyy="0.000557280897208148"
+        iyz="-5.1747499478447E-05"
+        izz="0.000451753626639804" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/right_elbow_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/right_elbow_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_elbow_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.00153790317331315 -0.1223"
+      rpy="0 0 0" />
+    <parent
+      link="right_shoulder_yaw_link" />
+    <child
+      link="right_elbow_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-2.094"
+      upper="0"
+      effort="12"
+      velocity="1.047" />
+  </joint>
+  <link
+    name="Pelvis_link">
+    <inertial>
+      <origin
+        xyz="-7.05418258638143E-15 -6.47019168404588E-15 -0.0546039060769944"
+        rpy="0 0 0" />
+      <mass
+        value="1.56373075101401" />
+      <inertia
+        ixx="0.00524155713938442"
+        ixy="-6.12052211583836E-05"
+        ixz="-7.55965080578786E-19"
+        iyy="0.00301749290535214"
+        iyz="-7.4860874463561E-18"
+        izz="0.00533246298175575" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/Pelvis_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/Pelvis_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Pelvis_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.394500000000001"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Pelvis_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="1.047"
+      upper="-1.047"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_hip_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.00643311389426866 0.0363563730247397 -7.29295515666806E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.366210402524675" />
+      <inertia
+        ixx="0.000307313962411348"
+        ixy="1.97947916801001E-05"
+        ixz="2.82500619888937E-07"
+        iyy="0.000415652793494866"
+        iyz="-3.0319157385768E-08"
+        izz="0.000517236406039457" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/left_hip_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/left_hip_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0.00200664864480981 0.072972415070465 -0.0564999999999999"
+      rpy="0 0 0" />
+    <parent
+      link="Pelvis_link" />
+    <child
+      link="left_hip_pitch_link" />
+    <axis
+      xyz="-0.0274883376001856 -0.999622124252949 0" />
+    <limit
+      lower="-1.047"
+      upper="2.094"
+      effort="25"
+      velocity="2.8795" />
+  </joint>
+  <link
+    name="left_hip_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.00361054965545136 6.75117453708129E-05 -0.0638210467116757"
+        rpy="0 0 0" />
+      <mass
+        value="0.736371641976487" />
+      <inertia
+        ixx="0.00193961423272545"
+        ixy="9.47546969050284E-06"
+        ixz="0.000146114866658802"
+        iyy="0.00228129301327994"
+        iyz="-4.56064867254628E-06"
+        izz="0.00119125457089479" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/left_hip_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/left_hip_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_roll_joint"
+    type="revolute">
+    <origin
+      xyz="-0.00591657976115734 0.057684434490704 1.00707099056629E-05"
+      rpy="0 0 0" />
+    <parent
+      link="left_hip_pitch_link" />
+    <child
+      link="left_hip_roll_link" />
+    <axis
+      xyz="-0.999621223089218 0.0274883128193377 0.00134276132004781" />
+    <limit
+      lower="-1.571"
+      upper="0.175"
+      effort="25"
+      velocity="2.8795" />
+  </joint>
+  <link
+    name="left_hip_yaw_link">
+    <inertial>
+      <origin
+        xyz="-0.000140798360304553 -0.000310650327763923 -0.132309927839451"
+        rpy="0 0 0" />
+      <mass
+        value="1.37420210316304" />
+      <inertia
+        ixx="0.00648526781492242"
+        ixy="0.00018131995559515"
+        ixz="-3.01382104391471E-06"
+        iyy="0.00549951955198431"
+        iyz="-1.36711054023931E-05"
+        izz="0.0027218821803847" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/left_hip_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/left_hip_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="-0.000159322107416223 -5.41126899108457E-05 -0.117499879524544"
+      rpy="0 0 0" />
+    <parent
+      link="left_hip_roll_link" />
+    <child
+      link="left_hip_yaw_link" />
+    <axis
+      xyz="-0.00126637461436852 -0.000446435402331186 -0.999999098494977" />
+    <limit
+      lower="-0.785"
+      upper="0.785"
+      effort="27"
+      velocity="2.618" />
+  </joint>
+  <link
+    name="left_ankle_link">
+    <inertial>
+      <origin
+        xyz="0.0163322451350851 0.00228368647952187 -0.176260121828095"
+        rpy="0 0 0" />
+      <mass
+        value="1.37734054506338" />
+      <inertia
+        ixx="0.00460014194165913"
+        ixy="9.35606654937406E-05"
+        ixz="0.000216206438104719"
+        iyy="0.00409080848317524"
+        iyz="3.35530661101027E-05"
+        izz="0.00129910154125813" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/left_ankle_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/left_ankle_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_ankle_joint"
+    type="revolute">
+    <origin
+      xyz="-0.000146213091597597 -0.000571693263511003 -0.172499715328886"
+      rpy="0 0 0" />
+    <parent
+      link="left_hip_yaw_link" />
+    <child
+      link="left_ankle_link" />
+    <axis
+      xyz="0.175370642709866 -0.984502458701687 0.000215605803209821" />
+    <limit
+      lower="-2.094"
+      upper="0"
+      effort="25"
+      velocity="2.8795" />
+  </joint>
+  <link
+    name="left_ankle_pitch_link">
+    <inertial>
+      <origin
+        xyz="-0.0292260807080203 -0.00775448439004231 -0.0338235128694144"
+        rpy="0 0 0" />
+      <mass
+        value="1.04065817993547" />
+      <inertia
+        ixx="0.000645717891420469"
+        ixy="-0.000255124039205048"
+        ixz="6.63002379769181E-05"
+        iyy="0.0020408482352655"
+        iyz="5.1433986061037E-05"
+        izz="0.00262614515220197" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/left_ankle_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/left_ankle_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_ankle_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0.050165 0.0085746 -0.32352"
+      rpy="0 0 0" />
+    <parent
+      link="left_ankle_link" />
+    <child
+      link="left_ankle_pitch_link" />
+    <axis
+      xyz="0.1775 -0.98151 0.071654" />
+    <limit
+      lower="-0.436"
+      upper="0.436"
+      effort="12"
+      velocity="1.047" />
+  </joint>
+  <link
+    name="left_ankle_yaw_link">
+    <inertial>
+      <origin
+        xyz="0.0115099768549045 -0.000789776104519746 -0.0393295507123714"
+        rpy="0 0 0" />
+      <mass
+        value="1.04065817993547" />
+      <inertia
+        ixx="0.00064571789142047"
+        ixy="-0.000255124039205048"
+        ixz="6.63002379769181E-05"
+        iyy="0.0020408482352655"
+        iyz="5.1433986061037E-05"
+        izz="0.00262614515220197" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/left_ankle_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/left_ankle_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_ankle_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0.0094288 0.0016099 -0.31801"
+      rpy="0 0 0" />
+    <parent
+      link="left_ankle_link" />
+    <child
+      link="left_ankle_yaw_link" />
+    <axis
+      xyz="-0.98384 -0.17525 0.036603" />
+    <limit
+      lower="-0.436"
+      upper="0.436"
+      effort="12"
+      velocity="1.047" />
+  </joint>
+  <link
+    name="right_hip_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.00442539482941639 -0.0366549682102592 -7.29295515594641E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.366210402524675" />
+      <inertia
+        ixx="0.000305468768754072"
+        ixy="-1.37303646737309E-05"
+        ixz="2.8373991664097E-07"
+        iyy="0.000417497987152142"
+        iyz="1.47482624901331E-08"
+        izz="0.000517236406039457" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/right_hip_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/right_hip_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="-0.00200664864481341 -0.0729724150704645 -0.0565000000000009"
+      rpy="0 0 0" />
+    <parent
+      link="Pelvis_link" />
+    <child
+      link="right_hip_pitch_link" />
+    <axis
+      xyz="0.0274883376001857 0.999622124252949 0" />
+    <limit
+      lower="-2.094"
+      upper="1.047"
+      effort="25"
+      velocity="2.8795" />
+  </joint>
+  <link
+    name="right_hip_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.0441176677728611 0.000363799445575991 -0.0637610251233119"
+        rpy="0 0 0" />
+      <mass
+        value="0.736371641976489" />
+      <inertia
+        ixx="0.00193971660216226"
+        ixy="1.13333912946872E-05"
+        ixz="0.000145718452149615"
+        iyy="0.00228099800562745"
+        iyz="-1.85126567910317E-05"
+        izz="0.00119144720911052" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/right_hip_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/right_hip_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0.0314069209499325 -0.0583853864675818 -4.43111235639559E-05"
+      rpy="0 0 0" />
+    <parent
+      link="right_hip_pitch_link" />
+    <child
+      link="right_hip_roll_link" />
+    <axis
+      xyz="-0.999621223089218 0.0274883128193319 0.00134276132005891" />
+    <limit
+      lower="-0.175"
+      upper="1.571"
+      effort="25"
+      velocity="2.8795" />
+  </joint>
+  <link
+    name="right_hip_yaw_link">
+    <inertial>
+      <origin
+        xyz="-0.000188460144798798 -0.00149760444165348 -0.132301060557786"
+        rpy="0 0 0" />
+      <mass
+        value="1.3742020952477" />
+      <inertia
+        ixx="0.00650906554070478"
+        ixy="9.35077695942465E-05"
+        ixz="-3.6184084100063E-06"
+        iyy="0.0054754757671591"
+        iyz="-2.39158781077025E-05"
+        izz="0.00272212821412844" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/right_hip_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/right_hip_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0406853267024447 -0.000444869419479188 -0.117435115201189"
+      rpy="0 0 0" />
+    <parent
+      link="right_hip_roll_link" />
+    <child
+      link="right_hip_yaw_link" />
+    <axis
+      xyz="-0.0017078056793572 -0.0132608177760491 -0.999910613060823" />
+    <limit
+      lower="-0.785"
+      upper="0.785"
+      effort="27"
+      velocity="2.618" />
+  </joint>
+  <link
+    name="right_ankle">
+    <inertial>
+      <origin
+        xyz="0.0199586977376912 -0.00112836598878191 -0.176843417904767"
+        rpy="0 0 0" />
+      <mass
+        value="1.37734055211099" />
+      <inertia
+        ixx="0.00460164380888745"
+        ixy="5.06073416105806E-05"
+        ixz="0.000281576719644096"
+        iyy="0.00407739284542535"
+        iyz="-1.34959131562116E-05"
+        izz="0.00131101531275229" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/right_ankle.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/right_ankle.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_ankle"
+    type="revolute">
+    <origin
+      xyz="-0.000338871822581374 -0.00178949764095485 -0.172491109518956"
+      rpy="0 0 0" />
+    <parent
+      link="right_hip_yaw_link" />
+    <child
+      link="right_ankle" />
+    <axis
+      xyz="-0.0885510192379576 0.995985542739959 -0.0130963981654539" />
+    <limit
+      lower="0"
+      upper="2.094"
+      effort="25"
+      velocity="2.8795" />
+  </joint>
+  <link
+    name="right_ankle_roll_link">
+    <inertial>
+      <origin
+        xyz="-0.0280016222501737 -0.00546375215764838 -0.0352758049129918"
+        rpy="0 0 0" />
+      <mass
+        value="1.04065817863455" />
+      <inertia
+        ixx="0.000610059905911422"
+        ixy="-0.000132253255528476"
+        ixz="-3.28332229522214E-05"
+        iyy="0.00207528779703298"
+        iyz="4.32469721026835E-05"
+        izz="0.00262736357579963" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/right_ankle_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/right_ankle_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_ankle_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0.057643 0.00062787 -0.32113"
+      rpy="0 0 0" />
+    <parent
+      link="right_ankle" />
+    <child
+      link="right_ankle_roll_link" />
+    <axis
+      xyz="0.087229 -0.99259 0.084537" />
+    <limit
+      lower="-0.436"
+      upper="0.436"
+      effort="12"
+      velocity="1.047" />
+  </joint>
+  <link
+    name="right_ankle_yaw_link">
+    <inertial>
+      <origin
+        xyz="0.0134169139321513 -0.00211290840497821 -0.038670905302387"
+        rpy="0 0 0" />
+      <mass
+        value="1.04065817863455" />
+      <inertia
+        ixx="0.000610059905911422"
+        ixy="-0.000132253255528476"
+        ixz="-3.28332229522214E-05"
+        iyy="0.00207528779703298"
+        iyz="4.32469721026835E-05"
+        izz="0.00262736357579963" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/right_ankle_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/SNC_R2/right_ankle_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_ankle_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0.016225 -0.002723 -0.31773"
+      rpy="0 0 0" />
+    <parent
+      link="right_ankle" />
+    <child
+      link="right_ankle_yaw_link" />
+    <axis
+      xyz="-0.99595 -0.08873 -0.014221" />
+    <limit
+      lower="-0.436"
+      upper="0.436"
+      effort="12"
+      velocity="1.047" />
+  </joint>
+</robot>

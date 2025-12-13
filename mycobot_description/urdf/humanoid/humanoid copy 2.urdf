@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<robot name="my_robot">
+  <!-- Link Definitions -->
+  <link name="neck"/> 
+  <link name="Body">
+    <visual>
+      <geometry>
+	     <!--- 0.0 0 -0.04  1.5708 3.14159-->
+       <mesh filename="package://mycobot_description/urdf/humanoid/Body13.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="1 1 1 1"/>
+      </material>
+      <origin xyz = "0 0 0" rpy = " 0 1.57 0"/>
+    </visual>
+    <collision>
+      <geometry>
+	     <!--- 0.0 0 -0.04  1.5708 3.14159-->
+       <mesh filename="package://mycobot_description/urdf/humanoid/Body13.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <origin xyz = "0 0 0" rpy = " 0 1.57 0"/>
+    </collision>
+    </link> 
+ 
+ <link name="leftarm1"/> 
+ <!-- <link name="leftarm2"/> -->
+ <link name="leftarm2">
+    <visual>
+      <geometry>
+	     <!--- 0.0 0 -0.04  1.5708 3.14159-->
+       <mesh filename="package://mycobot_description/urdf/humanoid/Shoulder23.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="green">
+        <color rgba="1 1 1 0.8"/>
+      </material>
+      <origin xyz = "0 0 0" rpy = "-1.57 0 -1.57"/>
+    </visual>
+    <collision>
+      <geometry>
+	     <!--- 0.0 0 -0.04  1.5708 3.14159-->
+       <mesh filename="package://mycobot_description/urdf/humanoid/Shoulder23.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      
+        <origin xyz = "0 0 0" rpy = "-1.57 0 -1.57"/>
+    </collision>
+  </link>
+
+ <!-- <link name="rightarm1"/> -->
+ <!-- <link name="rightarm2"/> -->
+
+  <!-- Joint Definitions left -->
+ <joint name="Body_lower" type="fixed">
+      <parent link="Body"/>
+      <child link="neck"/>
+      <origin xyz="0 0 0.18" rpy="0 3.14 0"/>
+ </joint>
+
+
+
+ <!-- <joint name="joint_arm_left2" type="revolute">
+      <parent link="leftarm1"/>
+      <child link="leftarm2"/>
+      <origin xyz="0 0.055 0" rpy="0 3.14 0"/>
+      <axis xyz="0 1 0"/>
+      <limit lower="0" upper="1.57" effort="1.0" velocity="1.0"/>
+ </joint>
+
+ <joint name="joint_arm_right1" type="fixed">
+      <parent link="neck"/>
+      <child link="rightarm1"/>
+      <origin xyz="0 -0.15 0.18" rpy="0 0 3.14"/>
+ </joint> -->
+
+
+
+  
+
+</robot>

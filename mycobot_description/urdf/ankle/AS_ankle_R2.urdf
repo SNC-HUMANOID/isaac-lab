@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot
+  name="AS_ankle_R2">
+  <link
+    name="Foot_link">
+    <inertial>
+      <origin
+        xyz="-7.55063854190885E-07 -3.46944695195361E-18 -0.000843324114109798"
+        rpy="0 0 0" />
+      <mass
+        value="0.835807251447352" />
+      <inertia
+        ixx="0.000560229778636803"
+        ixy="-2.79822419196593E-19"
+        ixz="-7.30466374127998E-20"
+        iyy="0.00205349180242925"
+        iyz="-3.41739150878633E-20"
+        izz="0.00261060495382987" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/ankle/Foot_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/ankle/Foot_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="ankle_pitch_link">
+    <inertial>
+      <origin
+        xyz="2.60528057460796E-12 -1.50705836698961E-12 -0.0188759122693511"
+        rpy="0 0 0" />
+      <mass
+        value="0.106752054733386" />
+      <inertia
+        ixx="1.98275119652177E-05"
+        ixy="6.99236315288813E-22"
+        ixz="-8.88891489979795E-21"
+        iyy="1.60212609029026E-05"
+        iyz="-5.88644663207582E-21"
+        izz="8.2137910632807E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/ankle/ankle_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/ankle/ankle_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ankle_pitch_joint"
+    type="fixed">
+    <origin
+      xyz="0.031 0 0.04"
+      rpy="0 0 0" />
+    <parent
+      link="Foot_link" />
+    <child
+      link="ankle_pitch_link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0.785"
+      upper="-0.785"
+      effort="0"
+      velocity="0" />
+  </joint>
+  
+  <link
+    name="ankle_pitch_link_1">
+    <inertial>
+      <origin
+        xyz="0.00577276036384791 -0.0341490630392297 0.111978541419757"
+        rpy="0 0 0" />
+      <mass
+        value="0.0730861640649113" />
+      <inertia
+        ixx="0.000174352973677074"
+        ixy="7.32984840689408E-07"
+        ixz="-8.89419502206021E-06"
+        iyy="0.000173650035272976"
+        iyz="1.40959060007337E-05"
+        izz="2.27318651019206E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/ankle/ankle_pitch_link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mycobot_description/urdf/ankle/ankle_pitch_link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="dummy_x"/>
+  <joint
+    name="ankle_pitch_joint_1"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="ankle_pitch_link" />
+    <child
+      link="dummy_x" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0.785"
+      upper="-0.785"
+      effort="1"
+      velocity="2" />
+  </joint>
+  <joint
+    name="ankle_pitch_joint_2"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="dummy_x" />
+    <child
+      link="ankle_pitch_link_1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0.785"
+      upper="-0.785"
+      effort="1"
+      velocity="2" />
+  </joint>
+
+</robot>

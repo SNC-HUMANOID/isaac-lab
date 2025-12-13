@@ -1,0 +1,356 @@
+<?xml version="1.0"?>
+<robot name="my_robot">
+  <!-- Link Definitions -->
+  <link name="T_Body" />
+
+  <link name="B_Body">
+    <visual>
+      <geometry>
+        <!---
+        0.0 0 -0.04  1.5708 3.14159-->
+        <mesh filename="package://mycobot_description/urdf/humanoid/Body13.stl"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="blue">
+        <color rgba="1 1 1 1" />
+      </material>
+      <origin xyz="0 0 0" rpy=" 0 1.57 0" />
+    </visual>
+    <collision>
+      <geometry>
+        <!---
+        0.0 0 -0.04  1.5708 3.14159-->
+        <mesh filename="package://mycobot_description/urdf/humanoid/Body13.stl"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin xyz="0 0 0" rpy=" 0 1.57 0" />
+    </collision>
+  </link>
+  <!-- Joint Definitions left -->
+  <link name="leftarm1">
+    <visual>
+      <geometry>
+        <!---
+        0.0 0 -0.04  1.5708 3.14159-->
+        <mesh filename="package://mycobot_description/urdf/humanoid/Shoulder23.stl"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="2">
+        <color rgba="1 1 1 0.7" />
+      </material>
+      <origin xyz="0 0.0 0" rpy="0 0 0" />
+    </visual>
+    <collision>
+      <geometry>
+        <!---
+        0.0 0 -0.04  1.5708 3.14159-->
+        <mesh filename="package://mycobot_description/urdf/humanoid/Shoulder23.stl"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin xyz="0 0 0" rpy=" 0 0 0" />
+    </collision>
+  </link>
+
+  <link name="leftarm2">
+    <visual>
+      <geometry>
+        <!---
+        0.0 0 -0.04  1.5708 3.14159-->
+        <mesh filename="package://mycobot_description/urdf/humanoid/UpperArm33.stl"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="22">
+        <color rgba="1 1 1 1" />
+      </material>
+      <origin xyz="0 0.0 0.03" rpy="1.57 3.14 1.57" />
+    </visual>
+    <collision>
+      <geometry>
+        <!---
+        0.0 0 -0.04  1.5708 3.14159-->
+        <mesh filename="package://mycobot_description/urdf/humanoid/UpperArm33.stl"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin xyz="0 0 0" rpy=" 0 0 0" />
+    </collision>
+  </link>
+
+  <link name="leftarm3">
+    <visual>
+      <geometry>
+        <!---
+        0.0 0 -0.04  1.5708 3.14159-->
+        <mesh filename="package://mycobot_description/urdf/humanoid/Elbow43.stl"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="4">
+        <color rgba="1 1 1 1" />
+      </material>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </visual>
+    <collision>
+      <geometry>
+        <!---
+        0.0 0 -0.04  1.5708 3.14159-->
+        <mesh filename="package://mycobot_description/urdf/humanoid/Elbow43.stl"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin xyz="0 0 0" rpy=" 0 0 0" />
+    </collision>
+  </link>
+
+  <link name="leftarm4">
+    <visual>
+      <geometry>
+        <!---
+        0.0 0 -0.04  1.5708 3.14159-->
+        <mesh filename="package://mycobot_description/urdf/humanoid/ForeArm53.stl"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="55">
+        <color rgba="1 1 1 1" />
+      </material>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </visual>
+    <collision>
+      <geometry>
+        <!---
+        0.0 0 -0.04  1.5708 3.14159-->
+        <mesh filename="package://mycobot_description/urdf/humanoid/ForeArm53.stl"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin xyz="0 0 0" rpy=" 0 0 0" />
+    </collision>
+  </link>
+
+  <link name="leftarm5">
+    <visual>
+      <geometry>
+        <!---
+        0.0 0 -0.04  1.5708 3.14159-->
+        <mesh filename="package://mycobot_description/urdf/humanoid/Wrist63.stl"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="56">
+        <color rgba="1 1 1 1" />
+      </material>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </visual>
+    <collision>
+      <geometry>
+        <!---
+        0.0 0 -0.04  1.5708 3.14159-->
+        <mesh filename="package://mycobot_description/urdf/humanoid/Wrist63.stl"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin xyz="0 0 0" rpy=" 0 0 0" />
+    </collision>
+  </link>
+
+  <link name="rightarm1">
+    <visual>
+      <geometry>
+        <!---
+        0.0 0 -0.04  1.5708 3.14159-->
+        <mesh filename="package://mycobot_description/urdf/humanoid/Shoulder23.stl"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="2">
+        <color rgba="1 1 1 0.7" />
+      </material>
+      <origin xyz="0 0 0" rpy=" 0 0 0" />
+    </visual>
+    <collision>
+      <geometry>
+        <!---
+        0.0 0 -0.04  1.5708 3.14159-->
+        <mesh filename="package://mycobot_description/urdf/humanoid/Shoulder23.stl"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin xyz="0 0 0" rpy=" 0 0 0" />
+    </collision>
+  </link>
+
+  <link name="rightarm2">
+    <visual>
+      <geometry>
+        <!---
+        0.0 0 -0.04  1.5708 3.14159-->
+        <mesh filename="package://mycobot_description/urdf/humanoid/UpperArm33.stl"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="2.1">
+        <color rgba="1 1 1 0.7" />
+      </material>
+      <origin xyz="0 0.0 0.03" rpy="1.57 3.14 1.57" />
+    </visual>
+    <collision>
+      <geometry>
+        <!---
+        0.0 0 -0.04  1.5708 3.14159-->
+        <mesh filename="package://mycobot_description/urdf/humanoid/UpperArm33.stl"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin xyz="0 0 0" rpy=" 0 0 0" />
+    </collision>
+  </link>
+
+  <link name="rightarm3">
+    <visual>
+      <geometry>
+        <!---
+        0.0 0 -0.04  1.5708 3.14159-->
+        <mesh filename="package://mycobot_description/urdf/humanoid/Elbow43.stl"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="42">
+        <color rgba="1 1 1 1" />
+      </material>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </visual>
+    <collision>
+      <geometry>
+        <!---
+        0.0 0 -0.04  1.5708 3.14159-->
+        <mesh filename="package://mycobot_description/urdf/humanoid/Elbow43.stl"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin xyz="0 0 0" rpy=" 0 0 0" />
+    </collision>
+  </link>
+
+  <link name="rightarm4">
+    <visual>
+      <geometry>
+        <!---
+        0.0 0 -0.04  1.5708 3.14159-->
+        <mesh filename="package://mycobot_description/urdf/humanoid/ForeArm53.stl"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="55">
+        <color rgba="1 1 1 1" />
+      </material>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </visual>
+    <collision>
+      <geometry>
+        <!---
+        0.0 0 -0.04  1.5708 3.14159-->
+        <mesh filename="package://mycobot_description/urdf/humanoid/ForeArm53.stl"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin xyz="0 0 0" rpy=" 0 0 0" />
+    </collision>
+  </link>
+
+  <link name="rightarm5">
+    <visual>
+      <geometry>
+        <!---
+        0.0 0 -0.04  1.5708 3.14159-->
+        <mesh filename="package://mycobot_description/urdf/humanoid/Wrist63.stl"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="54">
+        <color rgba="1 1 1 1" />
+      </material>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </visual>
+    <collision>
+      <geometry>
+        <!---
+        0.0 0 -0.04  1.5708 3.14159-->
+        <mesh filename="package://mycobot_description/urdf/humanoid/Wrist63.stl"
+          scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin xyz="0 0 0" rpy=" 0 0 0" />
+    </collision>
+  </link>
+
+  <joint name="Body" type="fixed">
+    <parent link="B_Body" />
+    <child link="T_Body" />
+    <origin xyz="0 0 0.18" rpy="0 0 0" />
+  </joint>
+
+  <joint name="Body_leftarm1" type="revolute">
+    <parent link="T_Body" />
+    <child link="leftarm1" />
+    <origin xyz="0 0.209 0" rpy="1.57 0 -1.57" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14" upper="3.14" effort="1.0" velocity="1.0" />
+  </joint>
+
+  <joint name="leftarm1_leftarm2" type="revolute">
+    <parent link="leftarm1" />
+    <child link="leftarm2" />
+    <origin xyz="0 0 -0.025" rpy="0 0 -1.57" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14" upper="3.14" effort="1.0" velocity="1.0" />
+  </joint>
+
+  <joint name="leftarm2_leftarm3" type="revolute">
+    <parent link="leftarm2" />
+    <child link="leftarm3" />
+    <origin xyz="0.163 0 0.03" rpy="0 0 3.14" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14" upper="3.14" effort="1.0" velocity="1.0" />
+  </joint>
+
+  <joint name="leftarm3_leftarm4" type="revolute">
+    <parent link="leftarm3" />
+    <child link="leftarm4" />
+    <origin xyz="0 0 0" rpy="1.57 0 -1.57" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14" upper="3.14" effort="1.0" velocity="1.0" />
+  </joint>
+
+  <joint name="leftarm4_leftarm5" type="revolute">
+    <parent link="leftarm4" />
+    <child link="leftarm5" />
+    <origin xyz="0 0 0.118" rpy="1.57 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14" upper="3.14" effort="1.0" velocity="1.0" />
+  </joint>
+
+  <joint name="Body_rightarm1" type="revolute">
+    <parent link="T_Body" />
+    <child link="rightarm1" />
+    <origin xyz="0 -0.209  0" rpy="-1.57 0 1.57" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14" upper="3.14" effort="1.0" velocity="1.0" />
+  </joint>
+
+  <joint name="rightarm1_rightarm2" type="revolute">
+    <parent link="rightarm1" />
+    <child link="rightarm2" />
+    <origin xyz="0 0 -0.025" rpy="0 0 1.57" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14" upper="3.14" effort="1.0" velocity="1.0" />
+  </joint>
+
+  <joint name="rightarm2_rightarm3" type="revolute">
+    <parent link="rightarm2" />
+    <child link="rightarm3" />
+    <origin xyz="0.163 0 0.03" rpy="0 0 3.14" />
+    <axis xyz="1 0 0" />
+    <limit lower="-3.14" upper="3.14" effort="1.0" velocity="1.0" />
+  </joint>
+
+  <joint name="rightarm3_rightarm4" type="revolute">
+    <parent link="rightarm3" />
+    <child link="rightarm4" />
+    <origin xyz="0 0 0" rpy="1.57 0 -1.57" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14" upper="3.14" effort="1.0" velocity="1.0" />
+  </joint>
+
+  <joint name="rightarm4_rightarm5" type="revolute">
+    <parent link="rightarm4" />
+    <child link="rightarm5" />
+    <origin xyz="0 0 0.118" rpy="1.57 0 3.14" />
+    <axis xyz="0 1 0" />
+    <limit lower="-3.14" upper="3.14" effort="1.0" velocity="1.0" />
+  </joint>
+
+</robot>

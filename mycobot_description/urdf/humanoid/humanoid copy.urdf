@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!-- <robot  xmlns:xacro="http://www.ros.org/wiki/xacro" name="firefighter" > -->
+	
+
+
+  <link name="joint1">
+    <visual>
+      <geometry>
+	     <!--- 0.0 0 -0.04  1.5708 3.14159-->
+       <mesh filename="package://mycobot_description/urdf/humanoid/Body.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz = "0 0 0" rpy = " 0 1.57 0"/>
+    </visual>
+    <collision>
+      <geometry>
+	     <!--- 0.0 0 -0.04  1.5708 3.14159-->
+       <mesh filename="package://mycobot_description/urdf/humanoid/Body.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <origin xyz = "0 0 0.08" rpy = " 0 1.57 0"/>
+    </collision>
+  </link>
+  <link name="joint2">
+    <visual>
+      <geometry>
+	     <!--- 0.0 0 -0.04  1.5708 3.14159-->
+       <mesh filename="package://mycobot_description/urdf/humanoid/Shoulder.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz = "0 0 0" rpy = " 0 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+	     <!--- 0.0 0 -0.04  1.5708 3.14159-->
+       <mesh filename="package://mycobot_description/urdf/humanoid/Shoulder.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <origin xyz = "0 0 0" rpy = " 0 0 0"/>
+    </collision>
+  </link>
+  
+
+
+
+   
+  <joint name="joint1_to_joint2" type="revolute">
+    <axis xyz="0 0 1"/>
+    <limit effort = "1000.0" lower = "-2.9321" upper = "2.9321" velocity = "0"/>
+    <parent link="joint2"/>
+    <child link="joint1"/>
+    <origin xyz= "0 0.05 0.05" rpy = "0 0 0"/>
+  </joint>
+
+  <!-- <joint name="joint2_to_joint3" type="revolute">
+    <axis xyz="0 0 1"/>
+    <limit effort = "1000.0" lower = "-2.9321" upper = "2.9321" velocity = "0"/>
+    <parent link="joint3"/>
+    <child link="joint2"/>
+    <origin xyz= "0.018 -0.205 0.12" rpy = "0 0 -0.91"/>
+  </joint> -->
+
+ 
+
+</robot>

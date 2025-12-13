@@ -1,0 +1,87 @@
+digraph robot {
+	link_base_link [label=base_link color=blue fillcolor=lightgrey shape=box style=filled]
+	joint_left_shoulder_pitch_joint [label=left_shoulder_pitch_joint color=green fillcolor=lightgrey style=filled]
+	link_base_link -> joint_left_shoulder_pitch_joint
+	link_left_shoulder_pitch_link [label=left_shoulder_pitch_link color=blue fillcolor=lightgrey shape=box style=filled]
+	joint_left_shoulder_pitch_joint -> link_left_shoulder_pitch_link
+	joint_left_shoulder_roll_joint [label=left_shoulder_roll_joint color=green fillcolor=lightgrey style=filled]
+	link_left_shoulder_pitch_link -> joint_left_shoulder_roll_joint
+	link_left_shoulder_roll_link [label=left_shoulder_roll_link color=blue fillcolor=lightgrey shape=box style=filled]
+	joint_left_shoulder_roll_joint -> link_left_shoulder_roll_link
+	joint_left_shoulder_yaw_joint [label=left_shoulder_yaw_joint color=green fillcolor=lightgrey style=filled]
+	link_left_shoulder_roll_link -> joint_left_shoulder_yaw_joint
+	link_left_shoulder_yaw_link [label=left_shoulder_yaw_link color=blue fillcolor=lightgrey shape=box style=filled]
+	joint_left_shoulder_yaw_joint -> link_left_shoulder_yaw_link
+	joint_left_elbow_joint [label=left_elbow_joint color=green fillcolor=lightgrey style=filled]
+	link_left_shoulder_yaw_link -> joint_left_elbow_joint
+	link_left_elbow_link [label=left_elbow_link color=blue fillcolor=lightgrey shape=box style=filled]
+	joint_left_elbow_joint -> link_left_elbow_link
+	joint_right_shoulder_pitch_joint [label=right_shoulder_pitch_joint color=green fillcolor=lightgrey style=filled]
+	link_base_link -> joint_right_shoulder_pitch_joint
+	link_right_shoulder_pitch_link [label=right_shoulder_pitch_link color=blue fillcolor=lightgrey shape=box style=filled]
+	joint_right_shoulder_pitch_joint -> link_right_shoulder_pitch_link
+	joint_right_shoulder_roll_joint [label=right_shoulder_roll_joint color=green fillcolor=lightgrey style=filled]
+	link_right_shoulder_pitch_link -> joint_right_shoulder_roll_joint
+	link_right_shoulder_roll_link [label=right_shoulder_roll_link color=blue fillcolor=lightgrey shape=box style=filled]
+	joint_right_shoulder_roll_joint -> link_right_shoulder_roll_link
+	joint_right_shoulder_yaw_joint [label=right_shoulder_yaw_joint color=green fillcolor=lightgrey style=filled]
+	link_right_shoulder_roll_link -> joint_right_shoulder_yaw_joint
+	link_right_shoulder_yaw_link [label=right_shoulder_yaw_link color=blue fillcolor=lightgrey shape=box style=filled]
+	joint_right_shoulder_yaw_joint -> link_right_shoulder_yaw_link
+	joint_right_elbow_joint [label=right_elbow_joint color=green fillcolor=lightgrey style=filled]
+	link_right_shoulder_yaw_link -> joint_right_elbow_joint
+	link_right_elbow_link [label=right_elbow_link color=blue fillcolor=lightgrey shape=box style=filled]
+	joint_right_elbow_joint -> link_right_elbow_link
+	joint_Pelvis_joint [label=Pelvis_joint color=green fillcolor=lightgrey style=filled]
+	link_base_link -> joint_Pelvis_joint
+	link_Pelvis_link [label=Pelvis_link color=blue fillcolor=lightgrey shape=box style=filled]
+	joint_Pelvis_joint -> link_Pelvis_link
+	joint_left_hip_pitch_joint [label=left_hip_pitch_joint color=green fillcolor=lightgrey style=filled]
+	link_Pelvis_link -> joint_left_hip_pitch_joint
+	link_left_hip_pitch_link [label=left_hip_pitch_link color=blue fillcolor=lightgrey shape=box style=filled]
+	joint_left_hip_pitch_joint -> link_left_hip_pitch_link
+	joint_left_hip_roll_joint [label=left_hip_roll_joint color=green fillcolor=lightgrey style=filled]
+	link_left_hip_pitch_link -> joint_left_hip_roll_joint
+	link_left_hip_roll_link [label=left_hip_roll_link color=blue fillcolor=lightgrey shape=box style=filled]
+	joint_left_hip_roll_joint -> link_left_hip_roll_link
+	joint_left_hip_yaw_joint [label=left_hip_yaw_joint color=green fillcolor=lightgrey style=filled]
+	link_left_hip_roll_link -> joint_left_hip_yaw_joint
+	link_left_hip_yaw_link [label=left_hip_yaw_link color=blue fillcolor=lightgrey shape=box style=filled]
+	joint_left_hip_yaw_joint -> link_left_hip_yaw_link
+	joint_left_ankle_joint [label=left_ankle_joint color=green fillcolor=lightgrey style=filled]
+	link_left_hip_yaw_link -> joint_left_ankle_joint
+	link_left_ankle_link [label=left_ankle_link color=blue fillcolor=lightgrey shape=box style=filled]
+	joint_left_ankle_joint -> link_left_ankle_link
+	joint_left_ankle_roll_joint [label=left_ankle_roll_joint color=green fillcolor=lightgrey style=filled]
+	link_left_ankle_link -> joint_left_ankle_roll_joint
+	link_left_ankle_roll_link [label=left_ankle_roll_link color=blue fillcolor=lightgrey shape=box style=filled]
+	joint_left_ankle_roll_joint -> link_left_ankle_roll_link
+	joint_left_ankle_pitch_joint [label=left_ankle_pitch_joint color=green fillcolor=lightgrey style=filled]
+	link_left_ankle_roll_link -> joint_left_ankle_pitch_joint
+	link_left_ankle_pitch_link [label=left_ankle_pitch_link color=blue fillcolor=lightgrey shape=box style=filled]
+	joint_left_ankle_pitch_joint -> link_left_ankle_pitch_link
+	joint_right_hip_pitch_joint [label=right_hip_pitch_joint color=green fillcolor=lightgrey style=filled]
+	link_Pelvis_link -> joint_right_hip_pitch_joint
+	link_right_hip_pitch_link [label=right_hip_pitch_link color=blue fillcolor=lightgrey shape=box style=filled]
+	joint_right_hip_pitch_joint -> link_right_hip_pitch_link
+	joint_right_hip_roll_joint [label=right_hip_roll_joint color=green fillcolor=lightgrey style=filled]
+	link_right_hip_pitch_link -> joint_right_hip_roll_joint
+	link_right_hip_roll_link [label=right_hip_roll_link color=blue fillcolor=lightgrey shape=box style=filled]
+	joint_right_hip_roll_joint -> link_right_hip_roll_link
+	joint_right_hip_yaw_joint [label=right_hip_yaw_joint color=green fillcolor=lightgrey style=filled]
+	link_right_hip_roll_link -> joint_right_hip_yaw_joint
+	link_right_hip_yaw_link [label=right_hip_yaw_link color=blue fillcolor=lightgrey shape=box style=filled]
+	joint_right_hip_yaw_joint -> link_right_hip_yaw_link
+	joint_right_ankle [label=right_ankle color=green fillcolor=lightgrey style=filled]
+	link_right_hip_yaw_link -> joint_right_ankle
+	link_right_ankle [label=right_ankle color=blue fillcolor=lightgrey shape=box style=filled]
+	joint_right_ankle -> link_right_ankle
+	joint_right_ankle_roll_joint [label=right_ankle_roll_joint color=green fillcolor=lightgrey style=filled]
+	link_right_ankle -> joint_right_ankle_roll_joint
+	link_right_ankle_roll_link [label=right_ankle_roll_link color=blue fillcolor=lightgrey shape=box style=filled]
+	joint_right_ankle_roll_joint -> link_right_ankle_roll_link
+	joint_right_ankle_pitch_joint [label=right_ankle_pitch_joint color=green fillcolor=lightgrey style=filled]
+	link_right_ankle_roll_link -> joint_right_ankle_pitch_joint
+	link_right_ankle_pitch_link [label=right_ankle_pitch_link color=blue fillcolor=lightgrey shape=box style=filled]
+	joint_right_ankle_pitch_joint -> link_right_ankle_pitch_link
+}
