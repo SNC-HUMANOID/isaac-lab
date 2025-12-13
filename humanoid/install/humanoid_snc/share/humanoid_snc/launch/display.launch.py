@@ -11,7 +11,7 @@ def generate_launch_description():
     with open(urdf_file, 'r', encoding='utf-8') as urdf_handle:
         robot_description = urdf_handle.read()
 
-    rviz_wrapper = '/home/code/Humanoid/rviz2_wrapper.sh'
+    rviz_wrapper = '/home/code/SNC Lab/isaac-lab/humanoid/rviz2_wrapper.sh'
 
     return LaunchDescription([
         # Joint state publisher keeps TF tree populated

@@ -4,7 +4,7 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     # Path to URDF file
-    urdf_file = '/home/code/Humanoid/src/humanoid_snc/urdf/Humanoid_10102025.urdf'
+    urdf_file = '/home/code/SNC Lab/isaac-lab/humanoid/src/humanoid_snc/urdf/Humanoid_10102025.urdf'
     
     # Read the URDF file
     with open(urdf_file, 'r') as infp:

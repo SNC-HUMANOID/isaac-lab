@@ -4,7 +4,7 @@ from launch import LaunchDescription
 from launch_ros.actions import Node
 
 def generate_launch_description():
-    urdf_file = '/home/code/Humanoid/src/humanoid_10102025_ros2/urdf/Humanoid_10102025.urdf'
+    urdf_file = '/home/code/SNC Lab/isaac-lab/humanoid/src/humanoid_10102025_ros2/urdf/Humanoid_10102025.urdf'
     
     with open(urdf_file, 'r') as f:
         robot_description = f.read()

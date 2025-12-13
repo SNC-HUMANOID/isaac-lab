@@ -14,10 +14,10 @@ fi
 export LD_PRELOAD="/lib/x86_64-linux-gnu/libpthread.so.0"
 
 # Source ROS2 environment
-source /home/code/ros2_humble/install/setup.bash
+source /home/code/SNC Lab/isaac-lab/ros2_humble/install/setup.bash
 
 # Add workspace to AMENT_PREFIX_PATH
-export AMENT_PREFIX_PATH="/home/code/Humanoid/install/humanoid_snc:$AMENT_PREFIX_PATH"
+export AMENT_PREFIX_PATH="/home/code/SNC Lab/isaac-lab/humanoid/install/humanoid_snc:$AMENT_PREFIX_PATH"
 
 # Run RViz2
-exec /home/code/ros2_humble/install/rviz2/lib/rviz2/rviz2 "$@"
+exec /home/code/SNC Lab/isaac-lab/ros2_humble/install/rviz2/lib/rviz2/rviz2 "$@"

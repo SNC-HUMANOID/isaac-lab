@@ -14,7 +14,7 @@ This directory contains tools for deploying IsaacLab-trained policies on real ro
 ### 1. Export Your Trained Policy
 
 ```bash
-cd /home/code/IsaacLab
+cd /home/code/SNC Lab/isaac-lab/IsaacLab
 
 # Export checkpoint to TorchScript
 python ros2/export_policy_torchscript.py \
@@ -61,9 +61,9 @@ cd ~/ros2_ws/src
 ros2 pkg create --build-type ament_python humanoid_control
 
 # Copy files
-cp /home/code/IsaacLab/ros2/humanoid_policy_node.py \
+cp /home/code/SNC Lab/isaac-lab/IsaacLab/ros2/humanoid_policy_node.py \
    ~/ros2_ws/src/humanoid_control/humanoid_control/
-cp /home/code/IsaacLab/ros2/humanoid_policy.pt \
+cp /home/code/SNC Lab/isaac-lab/IsaacLab/ros2/humanoid_policy.pt \
    ~/ros2_ws/src/humanoid_control/config/
 
 # Build and run

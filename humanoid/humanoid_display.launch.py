@@ -6,13 +6,13 @@ from launch.actions import ExecuteProcess
 from launch_ros.actions import Node
 
 def generate_launch_description():
-    urdf_file = '/home/code/Humanoid/src/humanoid_snc/urdf/Humanoid_abs.urdf'
+    urdf_file = '/home/code/SNC Lab/isaac-lab/humanoid/src/humanoid_snc/urdf/Humanoid_abs.urdf'
     
     with open(urdf_file, 'r') as f:
         robot_description = f.read()
     
     # Create wrapper script for joint_state_publisher_gui
-    jsp_wrapper = '/home/code/Humanoid/jsp_wrapper.sh'
+    jsp_wrapper = '/home/code/SNC Lab/isaac-lab/humanoid/jsp_wrapper.sh'
     with open(jsp_wrapper, 'w') as f:
         f.write('''#!/bin/bash
 unset GTK_PATH
@@ -36,7 +36,7 @@ exec /opt/ros/humble/lib/joint_state_publisher_gui/joint_state_publisher_gui "$@
             parameters=[{'robot_description': robot_description}]
         ),
         ExecuteProcess(
-            cmd=['/home/code/Humanoid/rviz2_wrapper.sh'],
+            cmd=['/home/code/SNC Lab/isaac-lab/humanoid/rviz2_wrapper.sh'],
             output='screen'
         )
     ])

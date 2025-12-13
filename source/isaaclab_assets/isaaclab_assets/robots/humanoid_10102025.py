@@ -5,7 +5,7 @@ import isaaclab.sim as sim_utils
 HUMANOID_10102025_CFG = ArticulationCfg(
     # Switch to spawning directly from URDF (approach A) so updated root link 'root_joint' is used.
     spawn=sim_utils.UrdfFileCfg(
-        asset_path="/home/code/IsaacLab/source/isaaclab_assets/isaaclab_assets/humanoid_snc/urdf/Humanoid_abs.urdf",
+        asset_path="/home/code/SNC Lab/isaac-lab/IsaacLab/source/isaaclab_assets/isaaclab_assets/humanoid_snc/urdf/Humanoid_abs.urdf",
         fix_base=False,
         activate_contact_sensors=True,
         joint_drive=sim_utils.UrdfConverterCfg.JointDriveCfg(

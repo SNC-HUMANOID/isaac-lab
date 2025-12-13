@@ -1,32 +1,32 @@
 # Humanoid_abs Training Setup
 
 ## Overview
-This setup enables training the Humanoid_abs robot (from `/home/code/IsaacLab/source/isaaclab_assets/isaaclab_assets/humanoid_snc/urdf/Humanoid_abs.urdf`) to walk forward using reinforcement learning.
+This setup enables training the Humanoid_abs robot (from `/home/code/SNC Lab/isaac-lab/IsaacLab/source/isaaclab_assets/isaaclab_assets/humanoid_snc/urdf/Humanoid_abs.urdf`) to walk forward using reinforcement learning.
 
 ## Files Created
 
 ### 1. Robot Configuration
-**File**: `/home/code/IsaacLab/source/isaaclab_assets/isaaclab_assets/robots/humanoid_abs.py`
+**File**: `/home/code/SNC Lab/isaac-lab/IsaacLab/source/isaaclab_assets/isaaclab_assets/robots/humanoid_abs.py`
 - Defines the `HUMANOID_ABS_CFG` configuration
 - Loads the URDF file
 - Configures actuators for legs, feet, torso, and arms
 - Sets initial joint positions for stable standing
 
 ### 2. Environment Configuration
-**File**: `/home/code/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/humanoid_abs/flat_env_cfg.py`
+**File**: `/home/code/SNC Lab/isaac-lab/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/humanoid_abs/flat_env_cfg.py`
 - Defines `HumanoidAbsFlatEnvCfg` for training
 - Defines `HumanoidAbsFlatEnvCfg_PLAY` for evaluation
 - Custom reward function focused on forward walking
 - Flat terrain (no obstacles)
 
 ### 3. Training Configuration
-**File**: `/home/code/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/humanoid_abs/agents/rsl_rl_ppo_cfg.py`
+**File**: `/home/code/SNC Lab/isaac-lab/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/humanoid_abs/agents/rsl_rl_ppo_cfg.py`
 - PPO hyperparameters optimized for bipedal locomotion
 - 2000 max iterations
 - Neural network: [256, 256, 128] hidden layers
 
 ### 4. Environment Registration
-**File**: `/home/code/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/humanoid_abs/__init__.py`
+**File**: `/home/code/SNC Lab/isaac-lab/IsaacLab/source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/humanoid_abs/__init__.py`
 - Registers two environments:
   - `Isaac-Velocity-Flat-Humanoid-Abs-v0` (training)
   - `Isaac-Velocity-Flat-Humanoid-Abs-Play-v0` (evaluation)
@@ -49,7 +49,7 @@ The Humanoid_abs robot has the following joints:
 
 ### Start Training
 ```bash
-cd /home/code/IsaacLab
+cd /home/code/SNC Lab/isaac-lab/IsaacLab
 ./isaaclab.sh -p scripts/reinforcement_learning/rsl_rl/train.py --task=Isaac-Velocity-Flat-Humanoid-Abs-v0
 ```
 

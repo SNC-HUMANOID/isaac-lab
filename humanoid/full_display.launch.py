@@ -5,7 +5,7 @@ from launch.actions import ExecuteProcess
 
 def generate_launch_description():
     # Path to URDF file
-    urdf_file = '/home/code/Humanoid/src/humanoid_snc/urdf/Humanoid_10102025.urdf'
+    urdf_file = '/home/code/SNC Lab/isaac-lab/humanoid/src/humanoid_snc/urdf/Humanoid_10102025.urdf'
     
     # Read the URDF file
     with open(urdf_file, 'r') as infp:
@@ -31,7 +31,7 @@ def generate_launch_description():
         
         # RViz2 using wrapper script
         ExecuteProcess(
-            cmd=['/home/code/Humanoid/rviz2_wrapper.sh'],
+            cmd=['/home/code/SNC Lab/isaac-lab/humanoid/rviz2_wrapper.sh'],
             output='screen',
             name='rviz2'
         )
