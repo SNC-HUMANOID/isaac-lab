@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//home/sncbot/Downloads/HM+lage/Humaniod_SNC_ROS_URDF/Humanoid_SNC/urdf/**)",
+      "Bash(kill:*)",
+      "Bash(pkill:*)",
+      "Bash(export:*)",
+      "Bash(./isaaclab.sh:*)",
+      "Bash(chmod:*)",
+      "Bash(python3:*)",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(cp:*)",
+      "Bash(grep:*)",
+      "Bash(echo:*)",
+      "Bash(timeout:*)",
+      "Bash(xargs ls:*)",
+      "Read(//home/sncbot/Downloads/HM+lage/Humaniod_SNC_ROS_URDF/Humanoid_SNC/**)",
+      "Read(//home/sncbot/Downloads/HM+lage/Humaniod_SNC_ROS_URDF/**)",
+      "Bash(for:*)",
+      "Bash(done)",
+      "Bash(conda info:*)",
+      "Bash(tee:*)",
+      "Read(//home/sncbot/isaac-sim/**)",
+      "Bash(./python.sh:*)",
+      "Bash(source:*)",
+      "Bash(conda activate:*)",
+      "Read(//home/sncbot/.local/share/ov/**)",
+      "Bash(/home/sncbot/isaac-sim/python.sh:*)",
+      "Bash(/home/sncbot/IsaacLab/mycobot_description/urdf/SNC_R5/Humanoid_SNC_R5_fixed_knees.urdf )",
+      "Bash(/home/sncbot/IsaacLab/mycobot_description/urdf/SNC_R5/Humanoid_SNC_R5_fixed_knees.usd )",
+      "Bash(/home/sncbot/IsaacLab/mycobot_description/urdf/SNC_R5/Humanoid_SNC_R5_fixed_knees_corrected.usd )",
+      "Bash(ln:*)",
+      "Bash(./test_snc_r5_model.sh:*)",
+      "Read(//tmp/**)",
+      "Bash(jobs)",
+      "Bash(/home/sncbot/env_isaaclab/bin/python:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
