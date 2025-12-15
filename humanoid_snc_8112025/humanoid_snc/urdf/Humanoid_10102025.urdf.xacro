@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<robot name="Humanoid_10102025" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find humanoid_10102025)/urdf/Humanoid_10102025.urdf" />
+
+  <xacro:property name="joint_names" value="$(arg joint_names)" />
+
+  <link name="pelvis">
+    <inertial>
+      <origin xyz="-0.0045 0 0" rpy="0 0 0" />
+      <mass value="0.146" />
+      <inertia ixx="0.0005" ixy="0" ixz="0" iyy="0.0003" iyz="0" izz="0.0005" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh uri="model://humanoid_10102025/meshes/pelvis.stl" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh uri="model://humanoid_10102025/meshes/pelvis.stl" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Additional links and joints can be defined here following the same structure -->
+
+</robot>
